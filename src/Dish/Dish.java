@@ -6,6 +6,10 @@ public class Dish {
     private String Name;
     private ArrayList<Attribute> Attrs;
 
+    public static ArrayList<Dish> getDishList(){
+        return null;
+    }
+
     Dish(String dishName){
         //根据菜品名创建名称
 
