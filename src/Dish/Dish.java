@@ -3,12 +3,37 @@ package Dish;
 import java.util.ArrayList;
 
 public class Dish {
+    private int num;//菜品序号
     private String Name;
     private ArrayList<Attribute> Attrs;
+    private String ImageUrl;
+    private String Intro;
+
+
+
+    public static ArrayList<Dish> getDishList(){//获取所有现有菜品
+        return null;
+    }
 
     Dish(String dishName){
         //根据菜品名创建名称
 
+    }
+
+    public String getImageUrl() {
+        return ImageUrl;
+    }
+
+    public String getIntro() {
+        return Intro;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public String getName() {
