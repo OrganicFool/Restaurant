@@ -1,15 +1,19 @@
-package Dish;
+package Dishes;
 
 public class Option {
     private String name;
     private int sign;
     private int repository;
     private float price;
-    private boolean isSelected = false;
+
+    private boolean isSelect;
 
     Option(){
 
     }
+
+
+    public boolean isSelected() { return isSelect;}
 
     public String getName() {
         return name;
@@ -44,10 +48,23 @@ public class Option {
     }
 
     public void select(){
-        isSelected = true;
+        //原则上讲不宜使用这个方法，因为会造成多选的问题，如果使用，一定要在对应的attribute上进行验证
+        if(isSelect) {
+            throw new RuntimeException("This option has been already selected!!!");
+        }
+        isSelect = true;
+    }
+
+    public void removeSelect(){
+        //原则上讲不宜使用这个方法，因为会造成多选的问题，如果使用，一定要在对应的attribute上进行验证
+        if(!isSelect) {
+            throw new RuntimeException("This option hasn't been selected yet!!!");
+        }
+        isSelect = false;
+
     }
 
     public void abandon(){
-        isSelected = false;
+        isSelect = false;
     }
 }
