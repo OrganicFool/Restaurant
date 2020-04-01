@@ -8,27 +8,28 @@ package Membership;
         private String email;
         private int mobileNumber;
         private int membershipNumber;
+        private int password;
         private int virtualStamps;
+
 
         public Userinfo() {
         }
 
-        public Userinfo(String firstname, String surname, String email, int mobileNumber, int membershipNumber, int virtualStamps) {
+        public Userinfo(String firstname, String surname, String email, int mobileNumber, int membershipNumber, int password, int virtualStamps) {
             this.firstname = firstname;
             this.surname = surname;
             this.email = email;
             this.mobileNumber = mobileNumber;
             this.membershipNumber = membershipNumber;
+            this.password=password;
             this.virtualStamps = virtualStamps;
+
         }
 
         public String getFirstname() {
             return firstname;
         }
-
-        public void setFirstname(String firstname) {
-            this.firstname = firstname;
-        }
+        public void setFirstname(String firstname) { this.firstname = firstname; }
 
         public String getSurname() {
             return surname;
@@ -61,6 +62,9 @@ package Membership;
         public void setMembershipNumber(int membershipNumber) {
             this.membershipNumber = membershipNumber;
         }
+        public int getPassword() { return password; }
+
+        public void setPassword(int password) { this.password = password; }
 
         public int getVirtualStamps() {
             return virtualStamps;
@@ -70,6 +74,8 @@ package Membership;
             this.virtualStamps = virtualStamps;
         }
 
+
+
         public String toString() {
             return "User{" +
                     "\tfirstname\t" + firstname +
@@ -77,6 +83,7 @@ package Membership;
                     "\temail\t" + email +
                     "\tmobileNumber\t" + mobileNumber +
                     "\tmembershipNumber\t" + membershipNumber +
+                    "\tpassword\t" + password +
                     "\tvirtualStamps\t" + virtualStamps +
                     '}';
         }
