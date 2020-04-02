@@ -55,7 +55,7 @@ public class Dish {
 
     }
 
-    Dish(String dishName){
+    public Dish(String dishName){
         //根据菜品名创建名称
             dishName = dishName+".json";
             boolean flag = false;

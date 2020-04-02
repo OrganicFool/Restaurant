@@ -1,24 +1,34 @@
 package Order;
 
+import Dishes.Option;
+
 import java.util.ArrayList;
 
 public class Pay {
-    private ArrayList<Object> pay_dish;
-    private float pay_price;
+    private ArrayList<String> pay_attrs;
+    private ArrayList<Option> pay_opts;
+    private double pay_price;
     private String payment;//支付方式
     private int virtual_stamp; //券的数量
 
-    public ArrayList<Object> getPay_dish() {
-        return pay_dish;
+    public ArrayList<String> getPay_attrs() {
+        return pay_attrs;
     }
-    public void setPay_dish(ArrayList<Object> pay_dish) {
-        this.pay_dish = pay_dish;
+    public void setPay_attrs(ArrayList<String> pay_attrs) {
+        this.pay_attrs = pay_attrs;
     }
 
-    public float getPay_price() {
+    public ArrayList<Option> getPay_opts() {
+        return pay_opts;
+    }
+    public void setPay_opts(ArrayList<Option> pay_opts) {
+        this.pay_opts = pay_opts;
+    }
+
+    public double getPay_price() {
         return pay_price;
     }
-    public void setPay_price(float pay_price) {
+    public void setPay_price(double pay_price) {
         this.pay_price = pay_price;
     }
 
