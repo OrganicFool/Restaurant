@@ -31,6 +31,8 @@ public class SerialzationTest {
         catch (Exception e){
             e.printStackTrace();
         }
+
+        example();
         String json = buffer.substring(0);
         System.out.println(json);
 
