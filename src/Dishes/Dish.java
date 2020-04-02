@@ -173,6 +173,14 @@ public class Dish {
         return price;
     }
 
+    public ArrayList<String> getAttrNames(){
+        ArrayList<String> ans = new ArrayList<String>();
+        for (Attribute a:attrs){
+                ans.add(a.getName());
+        }
+        return ans;
+    }
+
 
 
 }
