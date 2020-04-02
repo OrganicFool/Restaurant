@@ -12,34 +12,33 @@ import java.util.ArrayList;
 
 public class SerialzationTest {
     public static void main(String[] args) {
-        String jsonPath = "E:\\360MoveData\\Users\\22923\\Desktop\\project\\Restaurant\\src\\Dishes\\Data\\HandPulledNoodle.json";
-        StringBuffer buffer = new StringBuffer();
-        try{
-
-            InputStream is = new FileInputStream(jsonPath);
-            String line; // 用来保存每行读取的内容
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            line = reader.readLine(); // 读取第一行
-            while (line != null) { // 如果 line 为空说明读完了
-                buffer.append(line); // 将读到的内容添加到 buffer 中
-                line = reader.readLine(); // 读取下一行
-            }
-            reader.close();
-            is.close();
-
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+//        String jsonPath = "E:\\360MoveData\\Users\\22923\\Desktop\\project\\Restaurant\\src\\Dishes\\Data\\Noodle.json";
+//        StringBuffer buffer = new StringBuffer();
+//        try{
+//
+//            InputStream is = new FileInputStream(jsonPath);
+//            String line; // 用来保存每行读取的内容
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+//            line = reader.readLine(); // 读取第一行
+//            while (line != null) { // 如果 line 为空说明读完了
+//                buffer.append(line); // 将读到的内容添加到 buffer 中
+//                line = reader.readLine(); // 读取下一行
+//            }
+//            reader.close();
+//            is.close();
+//
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
 
         example();
-        String json = buffer.substring(0);
-        System.out.println(json);
+
 
         Gson gson = new Gson();
-        Dish dish = gson.fromJson(json,Dish.class);
 
-        Dish dish2 = new Dish("HandPulledNoodle");
+
+        Dish dish2 = Dish.getDishList().get(0);
         System.out.println(dish2.getIntro());
         System.out.println(dish2.getAttrs().get(0).getOpts().get(0).getName());
         System.out.println(dish2.getAttrs().get(1).getOpts().get(1).getName());
@@ -66,7 +65,7 @@ public class SerialzationTest {
     }
     public static void example(){
         //根据名称创建菜品
-        Dish dish = new Dish("HandPulledNoodle");
+        Dish dish = new Dish("Noodle");
         ArrayList<Dish> dishList = Dish.getDishList();
         Dish dish2 = dishList.get(0);
 

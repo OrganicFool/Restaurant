@@ -18,7 +18,7 @@ public class Dish {
     public static ArrayList<Dish> getDishList(){
         //获取所有现有菜品列表
         List<String> childPathes = new ArrayList<String>() ;
-        File file = new File(Dish.class.getResource("/").getPath()+"\\Dishes\\Data");		//获取其file对象
+        File file = new File(Dish.class.getResource("/").getPath()+"/Dishes/Data");		//获取其file对象
         File[] fs = file.listFiles();	//遍历path下的文件和目录，放在File数组中
         for(File f:fs){					//遍历File[]数组
             if(!f.isDirectory())		//若非目录(即文件)，则打印
@@ -60,7 +60,7 @@ public class Dish {
             dishName = dishName+".json";
             boolean flag = false;
             String ans = "";
-            File file = new File(this.getClass().getResource("/").getPath()+"\\Dishes\\Data");		//获取其file对象
+            File file = new File(this.getClass().getResource("/").getPath()+"/Dishes/Data");		//获取其file对象
 
 
             File[] fs = file.listFiles();	//遍历path下的文件和目录，放在File数组中
@@ -79,7 +79,7 @@ public class Dish {
                 StringBuffer buffer = new StringBuffer();
                 try {
 
-                    InputStream is = new FileInputStream(this.getClass().getResource("/").getPath()+"\\Dishes\\Data\\"+dishName);
+                    InputStream is = new FileInputStream(this.getClass().getResource("/").getPath()+"/Dishes/Data/"+dishName);
                     String line; // 用来保存每行读取的内容
                     BufferedReader reader = new BufferedReader(new InputStreamReader(is));
                     line = reader.readLine(); // 读取第一行
