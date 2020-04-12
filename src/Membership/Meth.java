@@ -50,8 +50,8 @@ public class Meth {
       private static final String REGEX1 = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
       //用于判断是否数字的规则
               private static final String REGEX2 = "^-?\\d+(\\.\\d+)?$";
-       //开卡功能
-      public void openCard() {
+       //开户功能
+      public void openUser() {
               //用户名循环跳转条件
                 boolean isNickname = true;
                 String nickname = "";
@@ -73,6 +73,12 @@ public class Meth {
         } while (isNickname);
                  Userinfo user = new Userinfo();
                  user.setNickname(nickname);
+          System.out.println("Please input your fistname");
+          user.setFirstname(scanner.next());
+          System.out.println("Please input your surname");
+          user.setSurname(scanner.next());
+          System.out.println("Please input your email");
+          user.setEmail(scanner.next());
 
          System.out.println("请输入电话号码");
                  user.setMobileNumber(scanner.nextInt());
