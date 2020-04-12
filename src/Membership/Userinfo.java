@@ -3,19 +3,21 @@ package Membership;
 
 
     public class Userinfo implements Serializable {
+        private String nickname;
         private String firstname;
         private String surname;
         private String email;
         private int mobileNumber;
         private int membershipNumber;
-        private int password;
+        private String password;
         private int virtualStamps;
 
 
         public Userinfo() {
         }
 
-        public Userinfo(String firstname, String surname, String email, int mobileNumber, int membershipNumber, int password, int virtualStamps) {
+        public Userinfo(String nickname,String firstname, String surname, String email, int mobileNumber, int membershipNumber, String password, int virtualStamps) {
+            this.nickname=nickname;
             this.firstname = firstname;
             this.surname = surname;
             this.email = email;
@@ -24,6 +26,14 @@ package Membership;
             this.password=password;
             this.virtualStamps = virtualStamps;
 
+        }
+
+        public String getNickname() {
+            return nickname;
+        }
+
+        public void setNickname(String nickname) {
+            this.nickname = nickname;
         }
 
         public String getFirstname() {
@@ -62,9 +72,9 @@ package Membership;
         public void setMembershipNumber(int membershipNumber) {
             this.membershipNumber = membershipNumber;
         }
-        public int getPassword() { return password; }
+        public String getPassword() { return password; }
 
-        public void setPassword(int password) { this.password = password; }
+        public void setPassword(String password) { this.password = password; }
 
         public int getVirtualStamps() {
             return virtualStamps;
@@ -78,6 +88,7 @@ package Membership;
 
         public String toString() {
             return "User{" +
+                    "\tnickname\t" + nickname +
                     "\tfirstname\t" + firstname +
                     "\tsurname\t" + surname +
                     "\temail\t" + email +
