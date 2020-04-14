@@ -3,6 +3,8 @@ package Order;
 import Dishes.Dish;
 import com.csvreader.CsvWriter;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.text.DecimalFormat;
@@ -149,7 +151,37 @@ public class Order {
         }
     }
 
-    public void printOrder() {
-        
+    public void printOrder(){
+        //里面有 取餐号，下单时间，菜名（选项名），总价格 ，支付方式， 下面的是现在大概的格式
+        //meal number: 11
+        //order time: yyyy-MM-dd HH:mm:ss
+        //dish: noodle
+        //
+        //Soup: Tonkotsu
+        //Noodles: Soft
+        //Spring onion: A lot!
+        //...
+        //price: 20
+        //payment method: cash
+        try {
+            System.out.println("1");
+            File file = new File(Order.class.getResource("/").getPath()+"Order/orderData/ticket.txt");
+            if(file.isFile() && file.exists()) {
+                FileWriter fw = new FileWriter(file, false);
+                fw.write("meal number：" + order_num + "\n");
+                fw.write("order time: " + order_date + "\n");
+                fw.write("dish：" + order_dish + "\n");
+                Dish dish = new Dish(order_dish);
+                for(int i = 0; i < dish.getOptions().size(); i++){
+                    fw.write(dish.getAttrs().get(i) + ": " + dish.getOptions().get(i) + "\n");
+                }
+                fw.write("price：" + order_price + "\n");
+                fw.write("payment method: " + order_pay);
+                fw.flush();
+                fw.close();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -4,7 +4,9 @@ import Dishes.Dish;
 
 public class Test {
     public static void main(String[] args) {
-        pay_example();
+
+        Order order = new Order();
+        order.printOrder();
 
     }
 
