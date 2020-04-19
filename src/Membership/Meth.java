@@ -112,6 +112,7 @@ public class Meth {
                                  System.out.println("Two password are different，please reset");
                             } else {
                                     isPassword = false;
+
                              }
                          System.out.println("Password analyse：   " + strongPW(password));
                      } while (isPassword);
