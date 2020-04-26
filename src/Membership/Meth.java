@@ -208,7 +208,7 @@ public class Meth {
                 List mylist = new ArrayList(); //make a set to save the random membershipnumber，and judge it is duplicated or not.
                 Random random = new Random();
                 int membershipnumber = random.nextInt(1000000);
-                while(mylist.size() < 50) {
+                while(mylist.size() < 999999) {
                     if(!mylist.contains(membershipnumber)) {
                         mylist.add(membershipnumber); //add data into set
                     }
