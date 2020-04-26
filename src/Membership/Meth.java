@@ -52,21 +52,22 @@ public class Meth {
               private static final String REGEX2 = "^-?\\d+(\\.\\d+)?$";
        //开户功能
       public void openUser() {
-              //用户名循环跳转条件
+              //user loop
                 boolean isNickname = true;
                 String nickname = "";
               do {
-                  //用户名不能以数字开头，不能有特殊符号，用户名长度必须在3到6位之间
-                    System.out.println("请输入你的姓名,用户名不能以数字开头，\n不能有特殊符号，用户名长度必须在3到6位之间");
-
+                  //Please input your nickname,which can't start with number，no special characters，length should between 3-6
+                    System.out.println("Please input your nickname,which can't start with number，\nno special characters，length should between 3-6");
                     nickname = scanner.next();
                     if (nickname.length() < 3 || nickname.length() > 6) {
-                        System.out.println("用户名的长度必须在3到6位之间（含）\n");
+                        System.out.println("length should between 3-6\n");
                     } else if (isFirstNum(nickname)) {
-                        System.out.println("用户名不能以数字开头\n");
+                        System.out.println("can't start with number\n");
                     } else if (hasSpecificSymbol(nickname)) {
-                        System.out.println("用户名不能包含特殊符号\n");
-                    } else {
+                        System.out.println("no special characters\n");
+                    } //else if (hasDuplication(nickname)) {
+                        //System.out.println("用户名不能重复\n");}
+                    else {
                         isNickname = false;
                     }
 
@@ -74,11 +75,11 @@ public class Meth {
                  Userinfo user = new Userinfo();
                  user.setNickname(nickname);
           //firstname
-          System.out.println("Please input your fistname");
-          user.setFirstname(scanner.next());
+                System.out.println("Please input your fistname");
+                user.setFirstname(scanner.next());
           //surname
-          System.out.println("Please input your surname");
-          user.setSurname(scanner.next());
+                System.out.println("Please input your surname");
+                user.setSurname(scanner.next());
           //check email
                   boolean isEmail=true;
                   String email="";
@@ -96,9 +97,9 @@ public class Meth {
                   }while(isEmail);
            user.setEmail(email);
            //mobilenumber
-          System.out.println("Please input your mobile number");
-          user.setMobileNumber(scanner.nextInt());
-          //password
+                System.out.println("Please input your mobile number");
+                user.setMobileNumber(scanner.nextInt());
+           //password
                  boolean isPassword = true;
                  String password = "";
                  do {   System.out.println("Please input your password");
@@ -112,30 +113,26 @@ public class Meth {
                                  System.out.println("Two password are different，please reset");
                             } else {
                                     isPassword = false;
-
                              }
                          System.out.println("Password analyse：   " + strongPW(password));
                      } while (isPassword);
                  user.setPassword(password);
                  System.out.println("set password successfully");
-
-                 //验证码
-                 //yanZhen();没做
                  //密保
-                 //System.out.println("请随意输入一组字符，作为密保");
-                 //String encrypted = scanner.next();
-                 //user.setEncrypted(encrypted);
+            //System.out.println("请随意输入一组字符，作为密保");
+            //String encrypted = scanner.next();
+            //user.setEncrypted(encrypted);
 
                  //初始
                  user.setVirtualStamps(0);
                  //编号
-                user.setMembershipNumber(membershipnumber());
-                //注册日期
-                //user.setRegisterNum(registerNum());
+                 user.setMembershipNumber(membershipnumber());
+                        //注册日期
+                        //user.setRegisterNum(registerNum());
                  System.out.println("Initial virtualstamps:0");
                  System.out.println("Your membershipnumber： " + membershipnumber());
-                 //System.out.println("日期是：" + registerNum());
-                 //System.out.println(user.toString());  //测试会员信息是否完整
+                        //System.out.println("日期是：" + registerNum());
+                        //System.out.println(user.toString());  //测试会员信息是否完整
                  getMap(user);
             }
              //一个判断字符第一位是否是数字的方法
@@ -160,28 +157,28 @@ public class Meth {
             }
 
     public String strongPW(String string) {
-                //将密码拆分成char数组，遍历这个数组，如果有数字则+1分，有英文小写字母+1分，有英文大写字母+1分，有特殊符号+1分
-                int total = 0;  //给密码强度量化打分
-                int hasNum = 0;   //有数字
-                int hasUpLetter = 0;  //有大写英文字母
-                int hasLowLetter = 0; //有小写英文字母
-                int hasSpecial = 0; //有特殊符号
-                 //设置密码强度的变量名
+                //put password into char[]，traverse this array，number,+1;minuscule,+1;capital letter,+1;special characters
+                int total = 0;  //the level of password
+                int hasNum = 0;   //number
+                int hasUpLetter = 0;  //capital letter
+                int hasLowLetter = 0; //minuscule
+                int hasSpecial = 0; //special number
+                 //set name of strength
                 String strong = "";
-                //将传入的密码拆分成char数组
+                //put password into char[]
                 char[] c = string.toCharArray();
-                //遍历这个数组
+                //traverse this array
                 for (int i = 0; i < c.length; i++) {
-                         //数字0-9
+                         //0-9
                          if ((int) (c[i]) >= 48 && (int) (c[i]) <= 57) {
-                                 hasNum = 1;  //有数字则+1
-                                 //小写英文字母
+                                 hasNum = 1;  //number,+1
+                                 //minuscule
                           } else if ((int) (c[i]) >= 97 && (int) (c[i]) <= 122) {
-                               hasLowLetter = 1; //有英文小写字母则+1
-                                //大写英文字母
+                               hasLowLetter = 1; //minuscule,+1
+                                //capital letter
                         } else if ((int) (c[i]) >= 65 && (int) (c[i]) <= 90) {
-                            hasUpLetter = 1; //有英文大写字母则+1
-                                //键盘里面的所有特殊符号
+                            hasUpLetter = 1; //capital letter,+1
+                                //special characters
                              } else {
                                  hasSpecial = 1;
                              }
@@ -205,11 +202,41 @@ public class Meth {
              }
 
 
-            //random menbershipnumber
+            //random membershipnumber(no duplication/无重复随机数)
             public   int membershipnumber() {
+                int[] intRandom = new int[999999];
+                List mylist = new ArrayList(); //make a set to save the random membershipnumber，and judge it is duplicated or not.
                 Random random = new Random();
-                int membershipnumber =random.nextInt(999999 - 100000 + 1) + 100000;
+                int membershipnumber = random.nextInt(1000000);
+                while(mylist.size() < 50) {
+                    if(!mylist.contains(membershipnumber)) {
+                        mylist.add(membershipnumber); //add data into set
+                    }
+                }
+                for(int i = 0;i <mylist.size();i++) {
+                    intRandom[i] = (Integer)(mylist.get(i));
+                }
                 return membershipnumber;
            }
+    public String verificationCode() {
+                //make a vericationCode send to mobile or email
+                String code = "";
+                for (int i = 0; i < 6; i++) {
+                        //random a boolean
+                         boolean boo = ((int) (Math.random() * 2)) == 0 ? true : false;
+                        if (boo) {
+                                //if true，random a number
+                                code += (int) (Math.random() * 10);
+                            } else {
+                                //if false，random a char array
+                                 int temp = ((int) (Math.random() * 2)) == 0 ? 65 : 97;
+                                //if tit starts with 65,ouput capital letter,A，if it starts with 97,it's the begin of minuscule
+                            //26 is total numbers
+                                char ch = (char) ((int) (Math.random() * 26) + temp);
+                                code += String.valueOf(ch);
+                           }
+                     }
+                return code;
+            }
 
 }
