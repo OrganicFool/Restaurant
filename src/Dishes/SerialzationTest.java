@@ -40,6 +40,8 @@ public class SerialzationTest {
 
         Dish dish2 = Dish.getDishList().get(0);
         System.out.println(dish2.getIntro());
+        System.out.println(dish2.getAttrNames());
+        System.out.println(dish2.getAddonNames());
         System.out.println(dish2.getAttrs().get(0).getOpts().get(0).getName());
         System.out.println(dish2.getAttrs().get(1).getOpts().get(1).getName());
 
@@ -58,6 +60,10 @@ public class SerialzationTest {
         System.out.println(dish2.getAttrs().get(1).isMultiSelected());
 
         dish2.getAttrs().get(1).select("Soft");
+
+
+        //创建新菜品
+
 
 
 

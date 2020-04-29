@@ -4,14 +4,24 @@ public class Option {
     private String name;
     private int sign;
     private int repository;
-    private float price;
+    private double price;
 
     private boolean isSelect;
+
+    public Option(String name, int sign, int repository, double price) {
+        this.name = name;
+        this.sign = sign;
+        this.repository = repository;
+        this.price = price;
+    }
 
     Option(){
 
     }
 
+    public Option(String name) {
+        this.name = name;
+    }
 
     public boolean isSelected() { return isSelect;}
 
@@ -39,11 +49,11 @@ public class Option {
         this.repository = repository;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
