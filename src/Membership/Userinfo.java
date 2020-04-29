@@ -9,7 +9,6 @@ package Membership;
         private String email;
         private int mobileNumber;
         private int membershipNumber;
-        private String password;
         private int virtualStamps;
 
         public String getNickname() {
@@ -52,9 +51,6 @@ package Membership;
             this.membershipNumber = membershipNumber;
         }
 
-        public String getPassword() { return password; }
-        public void setPassword(String password) { this.password = password; }
-
         public int getVirtualStamps() {
             return virtualStamps;
         }
@@ -66,7 +62,7 @@ package Membership;
             super();
         }
 
-        public Userinfo(String nickname,String firstname, String surname, String email, int mobileNumber, int membershipNumber, String password, int virtualStamps) {
+        public Userinfo(String nickname,String firstname, String surname, String email, int mobileNumber, int membershipNumber,  int virtualStamps) {
             super();
             this.nickname=nickname;
             this.firstname = firstname;
@@ -74,7 +70,6 @@ package Membership;
             this.email = email;
             this.mobileNumber = mobileNumber;
             this.membershipNumber = membershipNumber;
-            this.password=password;
             this.virtualStamps = virtualStamps;
 
         }
@@ -87,7 +82,6 @@ package Membership;
                     "\temail\t" + email +
                     "\tmobileNumber\t" + mobileNumber +
                     "\tmembershipNumber\t" + membershipNumber +
-                    "\tpassword\t" + password +
                     "\tvirtualStamps\t" + virtualStamps +
                     '}';
         }
