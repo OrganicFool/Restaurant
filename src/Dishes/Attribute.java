@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Attribute {
     private String name;
     private int sign;
-    private ArrayList<Option> opts;
+    private ArrayList<Option> opts = new ArrayList<Option>();
 
     Attribute(HashMap<String,String> map){
 
@@ -97,6 +97,30 @@ public class Attribute {
         if(!flag) throw new RuntimeException("There is no such option "+name);
     }
 
+    public void addOption(Option option){
+        //添加选项
+        opts.add(option);
+    }
+
+    public void reindexOption(int[] indexs){
+        //改变选项顺序(强迫症首选）
+    }
+
+    public void removeOption(String name){
+        //根据名称移除选项
+        int index = 0;
+        for(Option a:opts){
+            if (a.getName() == name) break;
+            index++;
+        }
+        if (index == opts.size()) throw new RuntimeException("Their is no such Option!");
+        else opts.remove(index);
+    }
+
+    public void removeOption(int index){
+        //根据索引移除选项
+        opts.remove(index);
+    }
 
 
 }
