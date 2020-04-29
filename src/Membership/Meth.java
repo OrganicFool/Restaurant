@@ -49,6 +49,18 @@ public class Meth {
 
         }
     }
+    public void addUserinfo(Userinfo userinfo){
+        map.put(userinfo.getNickname(), userinfo);
+    }
+    /**
+     * 重载
+     */
+    public void addUser(String nickname,String firstname, String surname, String email, int mobileNumber, int membershipNumber, String password, int virtualStamps){
+        Userinfo userinfo = new Userinfo();   //调用Student类
+        this.addUserinfo(userinfo); //直接addStudent这个类中的方法.
+
+    }
+
 
     /**
      * 根据姓名获取一个user信息
