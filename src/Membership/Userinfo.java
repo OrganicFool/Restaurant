@@ -9,29 +9,11 @@ package Membership;
         private String email;
         private int mobileNumber;
         private int membershipNumber;
-        private String password;
         private int virtualStamps;
-
-
-        public Userinfo() {
-        }
-
-        public Userinfo(String nickname,String firstname, String surname, String email, int mobileNumber, int membershipNumber, String password, int virtualStamps) {
-            this.nickname=nickname;
-            this.firstname = firstname;
-            this.surname = surname;
-            this.email = email;
-            this.mobileNumber = mobileNumber;
-            this.membershipNumber = membershipNumber;
-            this.password=password;
-            this.virtualStamps = virtualStamps;
-
-        }
 
         public String getNickname() {
             return nickname;
         }
-
         public void setNickname(String nickname) {
             this.nickname = nickname;
         }
@@ -44,7 +26,6 @@ package Membership;
         public String getSurname() {
             return surname;
         }
-
         public void setSurname(String surname) {
             this.surname = surname;
         }
@@ -52,7 +33,6 @@ package Membership;
         public String getEmail() {
             return email;
         }
-
         public void setEmail(String email) {
             this.email = email;
         }
@@ -60,7 +40,6 @@ package Membership;
         public int getMobileNumber() {
             return mobileNumber;
         }
-
         public void setMobileNumber(int mobileNumber) {
             this.mobileNumber = mobileNumber;
         }
@@ -68,23 +47,32 @@ package Membership;
         public int getMembershipNumber() {
             return membershipNumber;
         }
-
         public void setMembershipNumber(int membershipNumber) {
             this.membershipNumber = membershipNumber;
         }
-        public String getPassword() { return password; }
-
-        public void setPassword(String password) { this.password = password; }
 
         public int getVirtualStamps() {
             return virtualStamps;
         }
-
         public void setVirtualStamps(int virtualStamps) {
             this.virtualStamps = virtualStamps;
         }
 
+        public Userinfo() {
+            super();
+        }
 
+        public Userinfo(String nickname,String firstname, String surname, String email, int mobileNumber, int membershipNumber,  int virtualStamps) {
+            super();
+            this.nickname=nickname;
+            this.firstname = firstname;
+            this.surname = surname;
+            this.email = email;
+            this.mobileNumber = mobileNumber;
+            this.membershipNumber = membershipNumber;
+            this.virtualStamps = virtualStamps;
+
+        }
 
         public String toString() {
             return "User{" +
@@ -94,7 +82,6 @@ package Membership;
                     "\temail\t" + email +
                     "\tmobileNumber\t" + mobileNumber +
                     "\tmembershipNumber\t" + membershipNumber +
-                    "\tpassword\t" + password +
                     "\tvirtualStamps\t" + virtualStamps +
                     '}';
         }
