@@ -8,9 +8,6 @@ public class Attribute {
     private int sign;
     private ArrayList<Option> opts = new ArrayList<Option>();
 
-    Attribute(HashMap<String,String> map){
-
-    }
     Attribute(){
 
     }
@@ -84,6 +81,7 @@ public class Attribute {
         if(!flag) throw new RuntimeException("There is no such option "+name);
     }
 
+
     public void removeSelect(String name){
         //根据名称移除选项
         if(!isSelected()) throw new RuntimeException("This Attribute "+this.name+" hasn't been selected yet!!!");
@@ -121,6 +119,25 @@ public class Attribute {
         //根据索引移除选项
         opts.remove(index);
     }
+
+    public void clean(){
+        //清空选项
+        for(Option o:opts){
+            o.abandon();
+        }
+    }
+
+    public void safeSelect(int num){
+        clean();
+        select(num);
+    }
+
+    public void safeSelect(String name){
+        clean();
+        select(name);
+    }
+
+
 
 
 }

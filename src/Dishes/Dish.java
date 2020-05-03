@@ -246,11 +246,19 @@ public class Dish {
         else addOns.remove(index);
     }
 
+    public void clean(){
+        //清空所有选择
+        for (Attribute a:attrs) a.clean();
+        for (AddOnAttribute a:addOns) a.setOrder(0);
+    }
+
     public String toString(){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(this);
         return json;
     }
+
+
 
 
 
