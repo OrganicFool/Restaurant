@@ -3,19 +3,19 @@ package Membership;
 
 
     public class Userinfo implements Serializable {
-        private String nickname;
+
+        private int membershipNumber;
         private String firstname;
         private String surname;
         private String email;
         private int mobileNumber;
-        private int membershipNumber;
         private int virtualStamps;
 
-        public String getNickname() {
-            return nickname;
+        public int getMembershipNumber() {
+            return membershipNumber;
         }
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
+        public void setMembershipNumber(int membershipNumber) {
+            this.membershipNumber = membershipNumber;
         }
 
         public String getFirstname() {
@@ -44,13 +44,6 @@ package Membership;
             this.mobileNumber = mobileNumber;
         }
 
-        public int getMembershipNumber() {
-            return membershipNumber;
-        }
-        public void setMembershipNumber(int membershipNumber) {
-            this.membershipNumber = membershipNumber;
-        }
-
         public int getVirtualStamps() {
             return virtualStamps;
         }
@@ -62,26 +55,24 @@ package Membership;
             super();
         }
 
-        public Userinfo(String nickname,String firstname, String surname, String email, int mobileNumber, int membershipNumber,  int virtualStamps) {
+        public Userinfo(int membershipNumber,String firstname, String surname, String email,int mobileNumber,  int virtualStamps) {
             super();
-            this.nickname=nickname;
+            this.membershipNumber = membershipNumber;
             this.firstname = firstname;
             this.surname = surname;
             this.email = email;
             this.mobileNumber = mobileNumber;
-            this.membershipNumber = membershipNumber;
             this.virtualStamps = virtualStamps;
 
         }
 
         public String toString() {
             return "User{" +
-                    "\tnickname\t" + nickname +
+                    "\tmembershipNumber\t" + membershipNumber +
                     "\tfirstname\t" + firstname +
                     "\tsurname\t" + surname +
                     "\temail\t" + email +
                     "\tmobileNumber\t" + mobileNumber +
-                    "\tmembershipNumber\t" + membershipNumber +
                     "\tvirtualStamps\t" + virtualStamps +
                     '}';
         }
