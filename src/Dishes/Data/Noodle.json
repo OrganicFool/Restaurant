@@ -69,6 +69,57 @@
     }]
   },
     {
+      "name": "Nori",
+      "sign": 0,
+      "opts": [{
+        "name": "No please",
+        "sign": 0,
+        "repository": 0,
+        "price": 1.0,
+        "isSelected": false
+      }, {
+        "name": "Yes!",
+        "sign": 0,
+        "repository": 0,
+        "price": 1.0,
+        "isSelected": false
+      }]
+    },
+    {
+      "name": "Chadsu",
+      "sign": 0,
+      "opts": [{
+        "name": "No please",
+        "sign": 0,
+        "repository": 0,
+        "price": 1.0,
+        "isSelected": false
+      }, {
+        "name": "Yes!",
+        "sign": 0,
+        "repository": 0,
+        "price": 1.0,
+        "isSelected": false
+      }]
+    },
+    {
+      "name": "Boilled Egg",
+      "sign": 0,
+      "opts": [{
+        "name": "No please",
+        "sign": 0,
+        "repository": 0,
+        "price": 1.0,
+        "isSelected": false
+      }, {
+        "name": "Yes!",
+        "sign": 0,
+        "repository": 0,
+        "price": 1.0,
+        "isSelected": false
+      }]
+    },
+    {
       "name": "Spiciness",
       "sign": 0,
       "opts": [{
